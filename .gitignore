@@ -1,0 +1,5 @@
+# The filled-in product context is local only — it holds real company data.
+# Copy context/product.template.md to context/product.md and fill it in.
+plugins/uxr-studio/context/product.md
+
+.DS_Store

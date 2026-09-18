@@ -1,0 +1,13 @@
+{
+  "name": "uxr-studio-marketplace",
+  "owner": {
+    "name": "Iris Hsieh"
+  },
+  "plugins": [
+    {
+      "name": "uxr-studio",
+      "source": "./plugins/uxr-studio",
+      "description": "A complete user-research practice: 9 stage agents, 64 opinionated method skills, 7 workflow chains, and a single swappable product-context file."
+    }
+  ]
+}

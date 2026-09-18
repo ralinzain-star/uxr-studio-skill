@@ -1,0 +1,10 @@
+{
+  "name": "uxr-studio",
+  "version": "0.1.0",
+  "description": "A full user-research practice for Claude: nine stage agents and fifty-plus opinionated method skills covering intake, method selection, qualitative fieldwork, quantitative design, synthesis, reporting, and research impact.",
+  "author": {
+    "name": "Iris Hsieh"
+  },
+  "license": "MIT",
+  "keywords": ["user-research", "ux-research", "uxr", "discovery", "usability", "survey", "synthesis", "product-research"]
+}
