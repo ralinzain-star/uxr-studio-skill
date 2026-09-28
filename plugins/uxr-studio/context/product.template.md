@@ -1,6 +1,7 @@
 # Product Context
 
-> Copy this file over `context/product.md` to re-aim uxr-studio at a different product.
+> Copy this file to `.claude/uxr-product.md` in your project (or to `context/product.md` in a
+> local clone of the plugin) to aim uxr-studio at your product.
 > Fill in every section. Skills degrade gracefully if a section is thin, but the more concrete
 > this file is, the less the skills will ask you and the less generic their output will be.
 

@@ -16,8 +16,11 @@ Mixed methods is not two studies stapled together. One strand must answer a ques
 strand created, so the sequence decision is the whole design. Settle it before anything is
 fielded. Never run both strands blind and reconcile afterwards.
 
-Read `${CLAUDE_PLUGIN_ROOT}/context/product.md` before producing anything. It defines the
-product, the segments, the sampling traps, and the participant-facing language rules.
+Read the product context before producing anything: `.claude/uxr-product.md` in the current
+project if it exists, otherwise `${CLAUDE_PLUGIN_ROOT}/context/product.md`. It defines the
+product, the segments, the sampling traps, and the participant-facing language rules. If
+neither file exists, say so once, then ask only for the product details this task needs,
+using the headings in `${CLAUDE_PLUGIN_ROOT}/context/product.template.md` as the checklist.
 
 ## Use this when
 

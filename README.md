@@ -21,7 +21,7 @@ consistent point of view about how research should be done, applied the same way
   incentive conditional on completion. The quant agent will not report a rate from a small
   qualitative sample. The reporting agent will not ship a finding that fails the so-what gate.
 - **No product knowledge is baked in.** Everything product-specific lives in one file,
-  `context/product.md`. Swap that file and the whole practice re-aims at a different product
+  `.claude/uxr-product.md` in your project. Swap that file and the whole practice re-aims at a different product
   without editing a single skill.
 
 ## Install
@@ -45,8 +45,8 @@ claude plugin install uxr-studio@uxr-studio-marketplace --scope user
 
 Then run `/reload-plugins` — it should report 64 skills and 9 agents.
 
-To customise the product context (recommended), clone the repo and install from the local
-folder instead, or try it for a single session without installing:
+To work on the plugin itself, clone the repo, or try it for a single session without
+installing:
 
 ```bash
 git clone https://github.com/ralinzain-star/uxr-studio-skill.git
@@ -60,12 +60,16 @@ See [INSTALL.md](INSTALL.md) for local-marketplace install, validation, and trou
 
 ## Set up your product context
 
-The skills read one file for everything they need to know about your product. It is gitignored
-because it holds real company data, so create your own:
+The skills read one file for everything they need to know about your product. Put it in the
+project you do research from:
 
 ```bash
-cp plugins/uxr-studio/context/product.template.md plugins/uxr-studio/context/product.md
+mkdir -p .claude && curl -fsSL https://raw.githubusercontent.com/ralinzain-star/uxr-studio-skill/main/plugins/uxr-studio/context/product.template.md -o .claude/uxr-product.md
 ```
+
+Skills check `.claude/uxr-product.md` in the current project first, then
+`plugins/uxr-studio/context/product.md` in a local clone (gitignored). With neither, they still
+run — they tell you once and ask for what the task needs.
 
 Fill in each section and keep the headings — skills look them up by name:
 
@@ -80,7 +84,7 @@ Fill in each section and keep the headings — skills look them up by name:
 | Where evidence already lives | So `prior-evidence-check` knows where to look |
 | Decisions research is expected to inform | What every study must tie back to |
 
-A thin file still works — the skills just ask more questions. The richer it is, the less
+A thin file, or no file, still works — the skills just ask more questions. The richer it is, the less
 generic the output.
 
 ## Quick start
@@ -187,7 +191,7 @@ plugins/uxr-studio/
 ├── .claude-plugin/plugin.json
 ├── agents/                         # 9 stage agents
 ├── skills/                         # 64 skills (57 methods + 7 workflows)
-├── context/product.template.md     # copy to product.md and fill in
+├── context/product.template.md     # copy to .claude/uxr-product.md and fill in
 ├── CONNECTORS.md
 └── README.md
 ```
@@ -195,7 +199,7 @@ plugins/uxr-studio/
 ## Contributing
 
 Issues and pull requests are welcome. New skills should follow the existing pattern: take a
-position, say why, name what to gather first, and read `context/product.md` rather than
+position, say why, name what to gather first, and read the product context (`.claude/uxr-product.md`, then `context/product.md`) rather than
 hard-coding product details.
 
 ## License

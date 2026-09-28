@@ -16,8 +16,11 @@ Tree testing is the only cheap way to separate a navigation problem from a label
 and it has to run before visual design, not after. Once there is a comp, every failure gets
 blamed on the layout and the structure ships unexamined.
 
-Read `${CLAUDE_PLUGIN_ROOT}/context/product.md` before producing anything. It defines the
-product, the segments, the sampling traps, and the participant-facing language rules.
+Read the product context before producing anything: `.claude/uxr-product.md` in the current
+project if it exists, otherwise `${CLAUDE_PLUGIN_ROOT}/context/product.md`. It defines the
+product, the segments, the sampling traps, and the participant-facing language rules. If
+neither file exists, say so once, then ask only for the product details this task needs,
+using the headings in `${CLAUDE_PLUGIN_ROOT}/context/product.template.md` as the checklist.
 
 ## Use this when
 

@@ -18,8 +18,11 @@ unit of work is one observation per note, written in the participant's words, ca
 that points back to the source, because a note already translated into the team's language
 has already been interpreted and the interpretation can no longer be audited.
 
-Read `${CLAUDE_PLUGIN_ROOT}/context/product.md` before producing anything. It defines the
-product, the segments, the sampling traps, and the participant-facing language rules.
+Read the product context before producing anything: `.claude/uxr-product.md` in the current
+project if it exists, otherwise `${CLAUDE_PLUGIN_ROOT}/context/product.md`. It defines the
+product, the segments, the sampling traps, and the participant-facing language rules. If
+neither file exists, say so once, then ask only for the product details this task needs,
+using the headings in `${CLAUDE_PLUGIN_ROOT}/context/product.template.md` as the checklist.
 
 ## Use this when
 

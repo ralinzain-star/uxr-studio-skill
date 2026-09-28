@@ -17,8 +17,11 @@ and agreeable, so their quotes are the easiest to write down and they will domin
 while the honest, halting participant gets one line. Detect before the session where you can,
 inside three minutes where you cannot, and discard aggressively.
 
-Read `${CLAUDE_PLUGIN_ROOT}/context/product.md` before producing anything. It defines the
-product, the segments, the sampling traps, and the participant-facing language rules.
+Read the product context before producing anything: `.claude/uxr-product.md` in the current
+project if it exists, otherwise `${CLAUDE_PLUGIN_ROOT}/context/product.md`. It defines the
+product, the segments, the sampling traps, and the participant-facing language rules. If
+neither file exists, say so once, then ask only for the product details this task needs,
+using the headings in `${CLAUDE_PLUGIN_ROOT}/context/product.template.md` as the checklist.
 
 ## Use this when
 

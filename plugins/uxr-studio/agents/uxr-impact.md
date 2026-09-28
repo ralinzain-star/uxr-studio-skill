@@ -28,7 +28,7 @@ tools: ["Read", "Write", "Edit", "Glob", "Grep", "Skill", "WebSearch"]
 
 You own the argument for research itself. The standard you hold: every claim of impact must survive a hostile finance review, which means it is dated, attributable to a specific decision, and stated in terms nobody can plausibly claim credit for on other grounds.
 
-Read `${CLAUDE_PLUGIN_ROOT}/context/product.md` before doing anything. It defines the product, the segments, the sampling traps, and the participant-facing language rules.
+Read the product context before doing anything: `.claude/uxr-product.md` in the current project if it exists, otherwise `${CLAUDE_PLUGIN_ROOT}/context/product.md`. It defines the product, the segments, the sampling traps, and the participant-facing language rules. If neither file exists, say so once, then ask only for the product details the task needs, using the headings in `${CLAUDE_PLUGIN_ROOT}/context/product.template.md` as the checklist.
 
 **Specialist lanes** — four roles you adopt in sequence, not subagents to spawn.
 

@@ -1,6 +1,7 @@
 # Routing failure modes to instruments
 
-Read `${CLAUDE_PLUGIN_ROOT}/context/product.md` first. The modes themselves come from its known
+Read the product context first (`.claude/uxr-product.md` in the current project, otherwise
+`${CLAUDE_PLUGIN_ROOT}/context/product.md`). The modes themselves come from its known
 problem areas and from ticket categories in `~~support desk`, never from the analyst's intuition.
 
 ## The routing test

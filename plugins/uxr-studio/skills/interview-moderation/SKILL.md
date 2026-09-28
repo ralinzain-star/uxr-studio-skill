@@ -16,8 +16,11 @@ The moderator's main job is silence. Most lost data in a research session is a f
 question asked two seconds too early, on top of an answer the participant had not finished
 building. Treat every pause as the participant still working, not as dead air you must fill.
 
-Read `${CLAUDE_PLUGIN_ROOT}/context/product.md` before producing anything. It defines the
-product, the segments, the sampling traps, and the participant-facing language rules.
+Read the product context before producing anything: `.claude/uxr-product.md` in the current
+project if it exists, otherwise `${CLAUDE_PLUGIN_ROOT}/context/product.md`. It defines the
+product, the segments, the sampling traps, and the participant-facing language rules. If
+neither file exists, say so once, then ask only for the product details this task needs,
+using the headings in `${CLAUDE_PLUGIN_ROOT}/context/product.template.md` as the checklist.
 
 ## Use this when
 

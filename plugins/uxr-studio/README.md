@@ -8,16 +8,23 @@ Two design choices shape everything here:
 1. **Every skill is opinionated.** Each one teaches a specific way to do the thing and says why.
    Surveys do not answer "why". Small usability tests do not produce rates. Insights that cannot
    be wrong get killed. The point is that you get a consistent practice instead of a menu.
-2. **No product knowledge is baked into the skills.** All of it lives in one file,
-   `context/product.md`. Swap that file and the entire practice re-aims at a different product
+2. **No product knowledge is baked into the skills.** All of it lives in one product-context
+   file. Swap that file and the entire practice re-aims at a different product
    without touching a single skill.
 
 ## Pointing it at your product
 
-`context/product.md` is gitignored — it holds real company data, so you create your own. To aim it at your product:
+The product context holds real company data, so it is never committed to this repo. Skills
+look for it in this order:
 
-- Copy `context/product.template.md` over `context/product.md` and fill it in, or
-- Edit `context/product.md` directly.
+1. `.claude/uxr-product.md` in the project you are working in — the recommended spot. It
+   survives plugin updates and works with a marketplace install.
+2. `context/product.md` inside the plugin folder — handy when working from a local clone.
+   Gitignored.
+3. Neither exists — the skill says so once and asks only for the product details the task
+   needs, using `context/product.template.md` as its checklist.
+
+To create one, copy `context/product.template.md` to either location and fill it in.
 
 The skills read these sections by name, so keep the headings: Product · Who the users are
 (segment table and a named sampling trap) · Features to research by name · The funnel (with

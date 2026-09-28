@@ -16,9 +16,7 @@ To pick up new versions later:
 
     /plugin marketplace update uxr-studio-marketplace
 
-## Option 2 — install from a local clone (recommended if you customise it)
-
-You will want your own `context/product.md` (see below), which is easiest to edit in a clone:
+## Option 2 — install from a local clone (if you are editing the plugin)
 
     git clone https://github.com/ralinzain-star/uxr-studio-skill.git
     cd uxr-studio-skill
@@ -47,23 +45,24 @@ To validate the structure before installing:
 
 ## Point it at your product
 
-Everything product-specific lives in one file:
+Everything product-specific lives in one file. Skills look for it in this order:
 
-    plugins/uxr-studio/context/product.md
+1. `.claude/uxr-product.md` in the project you are working in (recommended — survives plugin
+   updates and works with any install option)
+2. `plugins/uxr-studio/context/product.md` in a local clone (gitignored, so real company data
+   never gets committed)
 
-This file is **not in the repo** — it holds real company data, so it is gitignored. Create it
-before first use:
+Create it in your project from the template:
 
 ```bash
-cp plugins/uxr-studio/context/product.template.md plugins/uxr-studio/context/product.md
+mkdir -p .claude && curl -fsSL https://raw.githubusercontent.com/ralinzain-star/uxr-studio-skill/main/plugins/uxr-studio/context/product.template.md -o .claude/uxr-product.md
 ```
 
 Then fill it in for your product. No skill needs editing — every agent and skill reads this one
 file. Keep the section headings, since the skills read them by name.
 
-If you installed from a local clone (Option 2), edit the file in the clone and re-run
-`/plugin marketplace update uxr-studio-marketplace`, or just work from Option 3 while you are
-iterating.
+If neither file exists, the skills still run: they say so once and ask only for the product
+details the task at hand needs.
 
 ## First things to try
 
